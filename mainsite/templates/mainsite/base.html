@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="https://bootswatch.com/_vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>﻿
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% block extra_links %}{% endblock %}
+    </head>
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container">
+            <!--<a class="navbar-header" href="{% url 'mainsite:index' %}"><strong>HMS</strong></a>-->
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">-->
+                <!--<span class="navbar-toggler-icon"></span>-->
+            <!--</button>-->
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% block item0_active %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'mainsite:index' %}"><strong> HMS </strong><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item {% block item1_active %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'mainsite:attendance' %}">Attendance</a>
+                    </li>
+                    <li class="nav-item {% block item2_active %}{% endblock %}">
+                        <a class="nav-link" href="#">Item2</a>
+                    </li>
+                    <li class="nav-item {% block item3_active %}{% endblock %}">
+                        <a class="nav-link" href="#">Item 3</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" role="search" method="get" action="#>
+                    <div class="form-group">
+                        <input class="form-control mr-sm-2" placeholder="Search" type="text" name="q" value="">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                </form>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank">Logout</a>
+                    </li>
+                    <!--<li class="nav-item">-->
+                        <!--<a class="nav-link" href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+</html>

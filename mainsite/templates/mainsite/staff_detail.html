@@ -1,0 +1,29 @@
+{% extends 'mainsite/base.html' %}
+{% block title %}{{ Attendance }}{% endblock %}
+{% block item1_active %}active{% endblock %}
+{% load static %}
+
+{% block body %}
+<div class="container-fluid songs-container">
+
+
+    <div class="row">
+
+        <!-- Left Album Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                        <img src="{% static 'mainsite/images/Male.png' %}" class="img-responsive col-xs-10">
+
+                    <h1>{{ staff.staff_name}} <small>{{ staff.staff_job_title}}</small></h1>
+                    <h6>{{ staff.staff_id }}</h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
